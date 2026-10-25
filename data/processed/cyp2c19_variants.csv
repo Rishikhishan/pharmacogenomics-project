@@ -1,0 +1,4 @@
+rsID,variant_id,gene,star_allele,function,assembly,dataset,allele_count,allele_number,allele_frequency,south_asian_allele_count,south_asian_allele_number,south_asian_frequency,frequency_warning
+rs4244285,10-94781859-G-A,CYP2C19,*2,No function,GRCh38,gnomAD v4.1.2,234686,1464646,0.1602,20947,65396,0.3203,Exome/genome frequencies flagged as discrepant
+rs4986893,10-94780653-G-A,CYP2C19,*3,No function,GRCh38,gnomAD v4.1.2,4750,1613588,0.002944,317,91064,0.003481,Exome/genome frequencies flagged as discrepant
+rs12248560,10-94761900-C-T,CYP2C19,*17,Increased function,GRCh38,gnomAD v4.1.2,30385,151940,0.2,785,4820,0.1629,Not in exomes; genome data only
