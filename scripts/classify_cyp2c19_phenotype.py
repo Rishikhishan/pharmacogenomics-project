@@ -14,10 +14,8 @@ allele_functions = dict(
 
 phenotype_rules = {
     ("normal", "normal"): "Normal metabolizer",
-
     ("increased", "normal"): "Rapid metabolizer",
     ("increased", "increased"): "Ultrarapid metabolizer",
-
     ("no_function", "normal"): "Intermediate metabolizer",
     ("increased", "no_function"): "Intermediate metabolizer",
     ("no_function", "no_function"): "Poor metabolizer"
