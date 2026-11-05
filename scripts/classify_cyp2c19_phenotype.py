@@ -18,7 +18,11 @@ phenotype_rules = {
     ("increased", "increased"): "Ultrarapid metabolizer",
     ("no_function", "normal"): "Intermediate metabolizer",
     ("increased", "no_function"): "Intermediate metabolizer",
-    ("no_function", "no_function"): "Poor metabolizer"
+    ("no_function", "no_function"): "Poor metabolizer",
+    ("decreased", "normal"): "Likely intermediate metabolizer",
+    ("decreased", "increased"): "Likely intermediate metabolizer",
+    ("decreased", "decreased"): "Likely intermediate metabolizer",
+    ("decreased", "no_function"): "Likely poor metabolizer"
 }
 
 
@@ -50,7 +54,12 @@ test_diplotypes = [
     "*1",
     "*1/*2/*3",
     "*1/*9",
-    "*5/*17"
+    "*5/*17",
+    "*1/*9",
+    "*9/*17",
+    "*9/*9",
+    "*2/*9",
+    "*3/*9"
 ]
 
 for diplotype in test_diplotypes:
