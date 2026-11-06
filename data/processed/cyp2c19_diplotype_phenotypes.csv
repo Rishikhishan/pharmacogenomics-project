@@ -1,16 +1,11 @@
 allele_1,allele_2,diplotype,phenotype,source
-*1,*1,*1/*1,Normal metabolizer,CPIC 2022 Table 1
-*1,*2,*1/*2,Intermediate metabolizer,CPIC 2022 Table 1
-*1,*3,*1/*3,Intermediate metabolizer,CPIC 2022 Table 1
-*1,*9,*1/*9,Likely intermediate metabolizer,CPIC 2022 Table 1
-*1,*17,*1/*17,Rapid metabolizer,CPIC 2022 Table 1
-*2,*2,*2/*2,Poor metabolizer,CPIC 2022 Table 1
-*2,*3,*2/*3,Poor metabolizer,CPIC 2022 Table 1
-*2,*9,*2/*9,Likely poor metabolizer,CPIC 2022 Table 1
-*2,*17,*2/*17,Intermediate metabolizer,CPIC 2022 Table 1
-*3,*3,*3/*3,Poor metabolizer,CPIC 2022 Table 1
-*3,*9,*3/*9,Likely poor metabolizer,CPIC 2022 Table 1
-*3,*17,*3/*17,Intermediate metabolizer,CPIC 2022 Table 1
-*9,*9,*9/*9,Likely intermediate metabolizer,CPIC 2022 Table 1
-*9,*17,*9/*17,Likely intermediate metabolizer,CPIC 2022 Table 1
-*17,*17,*17/*17,Ultrarapid metabolizer,CPIC 2022 Table 1
+*1,*1,*1/*1,Normal metabolizer,CPIC 2022
+*1,*2,*1/*2,Intermediate metabolizer,CPIC 2022
+*1,*3,*1/*3,Intermediate metabolizer,CPIC 2022
+*1,*17,*1/*17,Rapid metabolizer,CPIC 2022
+*2,*2,*2/*2,Poor metabolizer,CPIC 2022
+*2,*3,*2/*3,Poor metabolizer,CPIC 2022
+*2,*17,*2/*17,Intermediate metabolizer,CPIC 2022
+*3,*3,*3/*3,Poor metabolizer,CPIC 2022
+*3,*17,*3/*17,Intermediate metabolizer,CPIC 2022
+*17,*17,*17/*17,Ultrarapid metabolizer,CPIC 2022
