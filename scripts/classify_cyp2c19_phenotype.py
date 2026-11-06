@@ -1,14 +1,19 @@
 
 import pandas as pd
 
+reference_data = pd.read_csv(
+    "data/processed/cyp2c19_diplotype_phenotypes.csv"
+)
+
 allele_data = pd.read_csv(
     "data/processed/cyp2c19_allele_functions.csv"
 )
+known_alleles = set(allele_data["star_allele"])
 
-allele_functions = dict(
+phenotype_lookup = dict(
     zip(
-        allele_data["star_allele"],
-        allele_data["function_category"]
+        reference_data["diplotype"],
+        reference_data["phenotype"]
     )
 )
 
@@ -28,19 +33,22 @@ phenotype_rules = {
 
 def classify_diplotype(diplotype):
     alleles = diplotype.split("/")
+
     if len(alleles) != 2:
         return "Invalid diplotype"
-    if any(allele not in allele_functions for allele in alleles):
+
+    if any(allele not in known_alleles for allele in alleles):
         return "Unknown allele"
-    categories = tuple(
-        sorted(
-            [allele_functions[allele] for allele in alleles]
-        )
-    )
-    return phenotype_rules.get(
-        categories,
-        "Unclassified diplotype"
-    )
+
+    if diplotype in phenotype_lookup:
+        return phenotype_lookup[diplotype]
+
+    reversed_diplotype = "/".join(reversed(alleles))
+
+    if reversed_diplotype in phenotype_lookup:
+        return phenotype_lookup[reversed_diplotype]
+
+    return "Unclassified diplotype"
 
 test_diplotypes = [
     "*1/*1",
@@ -67,3 +75,27 @@ for diplotype in test_diplotypes:
         f"{diplotype}: "
         f"{classify_diplotype(diplotype)}"
     )
+
+print("\nReference Table Validation")
+print("--------------------------")
+
+correct = 0
+total = len(reference_data)
+
+for _, row in reference_data.iterrows():
+    diplotype = row["diplotype"]
+    expected = row["phenotype"]
+
+    predicted = classify_diplotype(diplotype)
+
+    if predicted == expected:
+        correct += 1
+
+    print(
+        f"{diplotype}: "
+        f"Expected = {expected} | "
+        f"Predicted = {predicted}"
+    )
+
+print(f"\nCorrect predictions: {correct}/{total}")
+print(f"Accuracy: {correct / total * 100:.2f}%")
